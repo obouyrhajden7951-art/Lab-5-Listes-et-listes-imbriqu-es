@@ -1,0 +1,60 @@
+#  Étape 6 : Exercices complémentaires 
+
+# 1) Tri simple 
+
+# Tri de la classe par note décroissante
+classe.sort(key=lambda ligne: ligne[2], reverse=True)
+print("Classe triée par note (de la plus haute à la plus basse) :")
+print(classe)
+
+# 2) Calcul de la moyenne 
+
+total = 0
+for etudiant in classe:
+    total += etudiant[2]  # on ajoute la note
+
+moyenne = total / len(classe)
+print("Moyenne des notes :", moyenne)
+
+
+# 3) Recherche d’un étudiant 
+
+nom_recherche = "Charlie"   # tu peux remplacer par input("Nom ? : ")
+
+trouve = False
+for etudiant in classe:
+    if etudiant[0] == nom_recherche:
+        print("Étudiant trouvé :", etudiant)
+        trouve = True
+        break
+
+if not trouve:
+    print("Cet étudiant n’est pas dans la classe.")
+
+
+# 4) Copie superficielle 
+
+classe_copie = classe[:]   # copie simple
+classe_copie[0][1] = 99    # on change l'âge dans la copie
+
+print("Original :", classe)
+print("Copie :", classe_copie)
+
+
+
+# 5) Conversion en dictionnaires 
+
+liste_dict = []
+for etudiant in classe:
+    nom = etudiant[0]
+    age = etudiant[1]
+    note = etudiant[2]
+
+    liste_dict.append({
+        "nom": nom,
+        "age": age,
+        "note": note
+    })
+
+print("Liste sous forme de dictionnaires :")
+print(liste_dict)
